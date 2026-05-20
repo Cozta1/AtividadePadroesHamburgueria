@@ -1,0 +1,99 @@
+@startuml DiagramaDeClasses_Hamburgueria
+
+skinparam classAttributeIconSize 0
+skinparam linetype ortho
+hide members
+hide circle
+
+skinparam class {
+    BackgroundColor White
+    BorderColor Black
+    ArrowColor Black
+    FontName Arial
+}
+
+' ── Classes ───────────────────────────────────────────────────────────────────
+
+class Cardapio <<singleton>>
+interface Hamburguer <<interface>>
+
+' Decorator
+abstract class HamburguerDecorator <<abstract>>
+class Bacon
+class Queijo
+class Salada
+class Molho
+
+' Abstract Factory
+interface FabricaAbstrata <<interface>>
+class FabricaComumBoi
+class FabricaIntegralFrango
+class HamburguerBasico
+
+interface Pao <<interface>>
+class PaoComum
+class PaoIntegral
+
+interface Carne <<interface>>
+class CarneBoi
+class CarneFrango
+
+' Factory Method
+abstract class Hamburgueria <<abstract>>
+class HamburgueriaBoi
+class HamburgueriaFrango
+
+' Bridge
+abstract class Combo <<abstract>>
+class ComboSimples
+class ComboFamilia
+interface Bebida <<interface>>
+class Refrigerante
+class Suco
+
+' ── Relações ──────────────────────────────────────────────────────────────────
+
+' Composition
+Cardapio "1" *-- "0..*" Hamburguer
+
+' Realization
+HamburguerBasico   ..|> Hamburguer
+HamburguerDecorator ..|> Hamburguer
+FabricaComumBoi      ..|> FabricaAbstrata
+FabricaIntegralFrango ..|> FabricaAbstrata
+PaoComum     ..|> Pao
+PaoIntegral  ..|> Pao
+CarneBoi     ..|> Carne
+CarneFrango  ..|> Carne
+Refrigerante ..|> Bebida
+Suco         ..|> Bebida
+
+' Generalization
+Bacon  --|> HamburguerDecorator
+Queijo --|> HamburguerDecorator
+Salada --|> HamburguerDecorator
+Molho  --|> HamburguerDecorator
+HamburgueriaBoi    --|> Hamburgueria
+HamburgueriaFrango --|> Hamburgueria
+ComboSimples --|> Combo
+ComboFamilia --|> Combo
+
+' Aggregation / Association
+HamburguerDecorator o--> Hamburguer
+HamburguerBasico o--> Pao
+HamburguerBasico o--> Carne
+Combo o--> Hamburguer
+Combo o--> Bebida
+
+' Dependency
+HamburguerBasico   ..> FabricaAbstrata : <<use>>
+FabricaComumBoi      ..> PaoComum     : <<create>>
+FabricaComumBoi      ..> CarneBoi     : <<create>>
+FabricaIntegralFrango ..> PaoIntegral : <<create>>
+FabricaIntegralFrango ..> CarneFrango : <<create>>
+Hamburgueria       ..> Hamburguer       : <<create>>
+HamburgueriaBoi    ..> HamburguerBasico : <<create>>
+HamburgueriaFrango ..> HamburguerBasico : <<create>>
+Hamburgueria       ..> Cardapio         : <<use>>
+
+@enduml

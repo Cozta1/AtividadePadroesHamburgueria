@@ -4,8 +4,8 @@ import main.java.Hamburguer;
 
 public abstract class Combo {
 
-    protected Hamburguer hamburguer;
-    protected Bebida bebida;
+    private Hamburguer hamburguer;
+    private Bebida bebida;
 
     public Combo(Hamburguer hamburguer, Bebida bebida) {
         this.hamburguer = hamburguer;

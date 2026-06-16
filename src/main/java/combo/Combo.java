@@ -1,6 +1,6 @@
 package main.java.combo;
 
-import main.java.Hamburguer;
+import main.java.lanche.Hamburguer;
 
 public abstract class Combo {
 

@@ -1,7 +1,7 @@
 package main.java.pedido;
 
-import main.java.Hamburguer;
-import main.java.preparo.PreparoLanche;
+import main.java.lanche.Hamburguer;
+import main.java.lanche.PreparoLanche;
 
 public class Pedido {
 

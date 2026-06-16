@@ -1,10 +1,10 @@
 package test.java;
 
-import main.java.Cardapio;
-import main.java.Hamburguer;
-import main.java.hamburgueria.Hamburgueria;
-import main.java.hamburgueria.HamburgueriaBoi;
-import main.java.hamburgueria.HamburgueriaFrango;
+import main.java.cardapio.Cardapio;
+import main.java.lanche.Hamburguer;
+import main.java.lanche.Hamburgueria;
+import main.java.lanche.HamburgueriaBoi;
+import main.java.lanche.HamburgueriaFrango;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

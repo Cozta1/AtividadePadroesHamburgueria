@@ -1,11 +1,11 @@
 package test.java;
 
-import main.java.Hamburguer;
+import main.java.lanche.Hamburguer;
 import main.java.combo.*;
-import main.java.complementos.Bacon;
-import main.java.hamburguerBasico.FabricaComumBoi;
-import main.java.hamburguerBasico.FabricaIntegralFrango;
-import main.java.hamburguerBasico.HamburguerBasico;
+import main.java.lanche.Bacon;
+import main.java.lanche.FabricaComumBoi;
+import main.java.lanche.FabricaIntegralFrango;
+import main.java.lanche.HamburguerBasico;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

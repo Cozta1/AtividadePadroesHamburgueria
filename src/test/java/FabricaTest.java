@@ -1,7 +1,8 @@
 package test.java;
 
-import main.java.*;
-import main.java.hamburguerBasico.*;
+import main.java.cardapio.*;
+import main.java.lanche.*;
+import main.java.lanche.*;
 
 import org.junit.jupiter.api.Test;
 

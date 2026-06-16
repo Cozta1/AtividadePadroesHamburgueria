@@ -1,8 +1,8 @@
 package test.java;
 
-import main.java.preparo.PreparoLanche;
-import main.java.preparo.PreparoXFrango;
-import main.java.preparo.PreparoXBacon;
+import main.java.lanche.PreparoLanche;
+import main.java.lanche.PreparoXFrango;
+import main.java.lanche.PreparoXBacon;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
